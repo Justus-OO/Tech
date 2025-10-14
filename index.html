@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WiFi Payment Profiles - amyicotech</title>
+<link rel="preload" href="https://ikonnect.co.ke">
+<link rel="preload" href="https://s3store.ikonnect.co.ke">
+<link rel="preload" href="https://amyicotech.ikonnect.co.ke">
+    <link href="https://amyicotech.jogooconnect.com/assets/css/app.min.css" rel="stylesheet">
+    <meta http-equiv="Cache-Control" content="max-age=259200, public">
+    <link rel="shortcut icon" href="https://s3store.ikonnect.co.ke/public/favicon.png" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FF6Q4NHVNM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-FF6Q4NHVNM');
+    </script>
+    <style>
+        :root {
+            --theme-color: #1118ee
+        }
+
+        .themed {
+            background: var(--theme-color) !important;
+            border-color: var(--theme-color) !important
+        }
+
+        .app {
+            padding-top: 0
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .modal {
+            position: fixed;
+            left: 0;
+            bottom: -100%;
+            width: 100%;
+            transition: bottom .3s ease
+        }
+
+        .modal.show {
+            bottom: 0
+        }
+
+        .bg-teal-500,
+        .bg-teal-600,
+        .bg-teal-400 {
+            background: var(--theme-color) !important;
+            border-color: var(--theme-color) !important
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="app">
+        <div id="content" class="app-content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="block-heading">
+                        <h2 class="text-center">AMYICO LIMITED</h2>
+                        <p class="alert text-center text-muted"><small>Need Assistance? Contact 0115014965</small></p>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-sm col-lg-4 col-md-5 mx-auto">
+                            <div class="alert alert-danger">
+                                <p class="text-center">Your code was not found. If you have already paid, click connect or search using the transaction number.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 mx-auto"></div>
+            </div>
+            <div class="row">
+                <div class="mb-2 col-sm col-lg-4 col-md-5 mx-auto">
+                    <div class="card">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item">
+                                <div class="text-black-600 fw-bold mb-2">Already Purchased?</div>
+                                <a href="http://login.wifi/login?username=9C:B7:0D:9F:74:A9" class="btn bg-teal-500 text-white btn-block w-100">click here to connect</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 mx-auto mb-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>How to Purchase</h3>
+                            <ol>
+                                <li>Pick the data you wish</li>
+                                <li>Tap Buy</li>
+                                <li>On the Pop-up, enter your MPESA Phone Number and click 'Pay using Mpesa'</li>
+                                <li>Once payment is confirmed, you will be connected automatically, or you can use your M-pesa message or transaction code to connect</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h6 class="col-sm col-lg-4 col-md-5 mx-auto"><i class="fa fa-television fa-fw"></i> Plans</h6>
+            <hr class="col-sm col-lg-4 col-md-5 mx-auto">
+            <div class="row">
+                <div class="col-sm-4 mx-auto">
+                    <style>
+                        .nav {
+                            justify-content: center
+                        }
+
+                        .nav-pills .nav-link.active,
+                        .nav-pills .show>.nav-link {
+                            background-color: #000
+                        }
+
+                        .nav-link {
+                            color: "#1118ee"
+                        }
+
+                        .bg-teal-500 {
+                            background: "#1118ee" !important;
+                            border-color: "#1118ee" !important
+                        }
+                    </style>
+                    <nav>
+                        <div class="nav nav-pills" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-hourly-tab" data-bs-toggle="tab" data-bs-target="#nav-hourly" type="button" role="tab" aria-controls="nav-hourly" aria-selected="true">Hourly</button>
+                            <button class="nav-link" id="nav-daily-tab" data-bs-toggle="tab" data-bs-target="#nav-daily" type="button" role="tab" aria-controls="nav-daily" aria-selected="false">Daily</button>
+                            <button class="nav-link" id="nav-weekly-tab" data-bs-toggle="tab" data-bs-target="#nav-weekly" type="button" role="tab" aria-controls="nav-weekly" aria-selected="false">Weekly</button>
+                            <button class="nav-link" id="nav-monthly-tab" data-bs-toggle="tab" data-bs-target="#nav-monthly" type="button" role="tab" aria-controls="nav-monthly" aria-selected="false">Monthly</button>
+                            <button class="nav-link" id="nav-data-tab" data-bs-toggle="tab" data-bs-target="#nav-data" type="button" role="tab" aria-controls="nav-monthly" aria-selected="false">Data Plans</button>
+                        </div>
+                    </nav>
+					<div class="row" data-plan_id="6887a02f61bf4b50bf5aec42" data-amount="1">
+    <div class="mb-2 mx-auto">
+        <div class="card prc-1" style="border: 2px solid #ffc107;"> <div class="list-group list-group-flush">
+                <div class="list-group-item d-flex align-items-center">
+                    <div class="flex-fill">
+                        <div class="text-gray-700">My Plan (5 Yrs)<br><small class="text-muted">3 Device</small></div>
+                        <div class="fw-bold text-gray-700">KES 1</div>
+                    </div>
+                    <div>
+                        <a data-item='{"_id":"6887a02f61bf4b50bf5aec42","name":"Test Plan (30 Mins)","rate-limit":"8M\/8M","shared-users":"3","session-timeout":157788000,"mac-cookie-timeout":"2d 00:00:00","idle-timeout":"00:00:10","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"1","updated_at":"2025-07-28T22:48:32.000000Z","price_numeric":1}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    <div class="tab-content py-2" id="nav-tabContent">
+                        <div class="tab-pane fade show" id="nav-data" role="tabpanel" aria-labelledby="nav-data-tab" tabindex="0"></div>
+                        <div class="tab-pane fade show active" id="nav-hourly" role="tabpanel" aria-labelledby="nav-hourly-tab" tabindex="0">
+                            <div class="row" data-plan_id="6885e9aa6908a62b243032c2" data-amount="10">
+                                <div class="mb-2 mx-auto">
+                                    <div class="card prc-10">
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <div class="flex-fill">
+                                                    <div class="text-gray-700">2 hours <span class="prc-10-helper"></span><br><small class="text-muted">1 Device</small></div>
+                                                    <div class="fw-bold text-gray-700">KES 10</div>
+                                                </div>
+                                                <div><a data-item='{"_id":"6885e9aa6908a62b243032c2","name":"2 hours","rate-limit":"8M\/8M","shared-users":"1","session-timeout":7200,"mac-cookie-timeout":"2d 00:00:00","idle-timeout":"00:01:00","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"10","price_numeric":10}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" data-plan_id="6885e9d36908a62b243032c3" data-amount="20">
+                                <div class="mb-2 mx-auto">
+                                    <div class="card prc-20">
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <div class="flex-fill">
+                                                    <div class="text-gray-700">5 hours <span class="prc-20-helper"></span><br><small class="text-muted">1 Device</small></div>
+                                                    <div class="fw-bold text-gray-700">KES 20</div>
+                                                </div>
+                                                <div><a data-item='{"_id":"6885e9d36908a62b243032c3","name":"5 hours","rate-limit":"8M\/8M","shared-users":"1","session-timeout":18000,"mac-cookie-timeout":"2d 00:00:00","idle-timeout":"00:01:00","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"20","price_numeric":20}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" data-plan_id="6885ea0725baf23de671b063" data-amount="30">
+                                <div class="mb-2 mx-auto">
+                                    <div class="card prc-30">
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <div class="flex-fill">
+                                                    <div class="text-gray-700">8 hours <span class="prc-30-helper"></span><br><small class="text-muted">1 Device</small></div>
+                                                    <div class="fw-bold text-gray-700">KES 30</div>
+                                                </div>
+                                                <div><a data-item='{"_id":"6885ea0725baf23de671b063","name":"8 hours","rate-limit":"8M\/8M","shared-users":"1","session-timeout":28800,"mac-cookie-timeout":"2d 00:00:00","idle-timeout":"00:01:00","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"30","price_numeric":30}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" data-plan_id="6885ea310d60c516fc0f3122" data-amount="50">
+                                <div class="mb-2 mx-auto">
+                                    <div class="card prc-50">
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <div class="flex-fill">
+                                                    <div class="text-gray-700">12 hours <span class="prc-50-helper"></span><br><small class="text-muted">1 Device</small></div>
+                                                    <div class="fw-bold text-gray-700">KES 50</div>
+                                                </div>
+                                                <div><a data-item='{"_id":"6885ea310d60c516fc0f3122","name":"12 hours","rate-limit":"8M\/8M","shared-users":"1","session-timeout":43200,"mac-cookie-timeout":"2d 00:00:00","idle-timeout":"00:01:00","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"50","price_numeric":50}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" data-plan_id="68a33d21ab8a146b2446a42b" data-amount="60">
+                                <div class="mb-2 mx-auto">
+                                    <div class="card prc-60">
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <div class="flex-fill">
+                                                    <div class="text-gray-700">6 hours(5users) <span class="prc-60-helper"></span><br><small class="text-muted">5 Devices</small></div>
+                                                    <div class="fw-bold text-gray-700">KES 60</div>
+                                                </div>
+                                                <div><a data-item='{"_id":"68a33d21ab8a146b2446a42b","name":"6 hours(5users)","rate-limit":"8M\/8M","shared-users":"5","session-timeout":21600,"mac-cookie-timeout":"2d 00:00:00","idle-timeout":"00:01:00","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"60","price_numeric":60}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-daily" role="tabpanel" aria-labelledby="nav-daily-tab" tabindex="0">
+                            <div class="row" data-plan_id="6885ea5b35c36b534b427ee3" data-amount="80">
+                                <div class="mb-2 mx-auto">
+                                    <div class="card prc-80">
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <div class="flex-fill">
+                                                    <div class="text-gray-700">24 hours <span class="prc-80-helper"></span><br><small class="text-muted">1 Device</small></div>
+                                                    <div class="fw-bold text-gray-700">KES 80</div>
+                                                </div>
+                                                <div><a data-item='{"_id":"6885ea5b35c36b534b427ee3","name":"24 hours","rate-limit":"8M\/8M","shared-users":"1","session-timeout":86400,"mac-cookie-timeout":"2d 00:00:00","idle-timeout":"00:01:00","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"80","price_numeric":80}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-weekly" role="tabpanel" aria-labelledby="nav-weekly-tab" tabindex="0">
+                            <div class="row" data-plan_id="6885ea904a46f05aaa314a23" data-amount="300">
+                                <div class="mb-2 mx-auto">
+                                    <div class="card prc-300">
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <div class="flex-fill">
+                                                    <div class="text-gray-700">1 week <span class="prc-300-helper"></span><br><small class="text-muted">1 Device</small></div>
+                                                    <div class="fw-bold text-gray-700">KES 300</div>
+                                                </div>
+                                                <div><a data-item='{"_id":"6885ea904a46f05aaa314a23","name":"1 week","rate-limit":"8M\/8M","shared-users":"1","session-timeout":604800,"mac-cookie-timeout":"2d 00:00:00","idle-timeout":"00:01:00","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"300","price_numeric":300}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" data-plan_id="6885eac753b59c024508eb14" data-amount="400">
+                                <div class="mb-2 mx-auto">
+                                    <div class="card prc-400">
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <div class="flex-fill">
+                                                    <div class="text-gray-700">1 week(3users) <span class="prc-400-helper"></span><br><small class="text-muted">3 Devices</small></div>
+                                                    <div class="fw-bold text-gray-700">KES 400</div>
+                                                </div>
+                                                <div><a data-item='{"_id":"6885eac753b59c024508eb14","name":"1 week(3users)","rate-limit":"8M\/8M","shared-users":"3","session-timeout":604800,"mac-cookie-timeout":"2d 00:00:00","idle-timeout":"00:01:00","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"400","price_numeric":400}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-monthly" role="tabpanel" aria-labelledby="nav-monthly-tab" tabindex="0">
+                            <div class="row" data-plan_id="6885eae855ce5502d33c30b2" data-amount="1000">
+                                <div class="mb-2 mx-auto">
+                                    <div class="card prc-1000">
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <div class="flex-fill">
+                                                    <div class="text-gray-700">1 month <span class="prc-1000-helper"></span><br><small class="text-muted">1 Device</small></div>
+                                                    <div class="fw-bold text-gray-700">KES 1000</div>
+                                                </div>
+                                                <div><a data-item='{"_id":"6885eae855ce5502d33c30b2","name":"1 month","rate-limit":"8M\/8M","shared-users":"1","session-timeout":2592000,"mac-cookie-timeout":"2d 00:00:00","idle-timeout":"00:01:00","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"1000","price_numeric":1000}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" data-plan_id="6887a02f61bf4b50bf5aec42" data-amount="1200">
+                                <div class="mb-2 mx-auto">
+                                    <div class="card prc-1200">
+                                        <div class="list-group list-group-flush">
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <div class="flex-fill">
+                                                    <div class="text-gray-700">1 month(3users) <span class="prc-1200-helper"></span><br><small class="text-muted">3 Devices</small></div>
+                                                    <div class="fw-bold text-gray-700">KES 1200</div>
+                                                </div>
+                                                <div><a data-item='{"_id":"6887a02f61bf4b50bf5aec42","name":"1 month(3users)","rate-limit":"8M\/8M","shared-users":"3","session-timeout":2592000,"mac-cookie-timeout":"2d 00:00:00","idle-timeout":"00:00:10","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"1200","updated_at":"2025-07-28T22:48:32.000000Z","price_numeric":1200}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-2 col-sm col-lg-4 col-md-5 mx-auto">
+                    <div class="card">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item">
+                                <div class="text-black-600 fw-bold mb-2">Already Purchased?</div>
+                                <a href="http://login.wifi/login?username=9C:B7:0D:9F:74:A8" class="btn bg-teal-500 text-white btn-block w-100">Connect</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-sm col-lg-4 col-md-5 mx-auto">
+                <div class="mb-2 col-sm">
+                    <div class="card">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item">
+                                <div class="text-black-600 fw-bold mb-2">Have Voucher Code?</div>
+                                <a href="#redeemVoucher" data-bs-toggle="modal" class="btn bg-teal-500 text-white btn-block w-100">Proceed</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2 col-sm">
+                    <div class="card">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item">
+                                <div class="text-black-600 fw-bold mb-2">Use Transaction Code</div>
+                                <a href="#redeemUsingTransactionNumber" data-bs-toggle="modal" class="btn bg-teal-500 text-white btn-block w-100">Proceed</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2 col-sm">
+                    <div class="card">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item">
+                                <div class="text-black-600 fw-bold mb-2">Use Username and Password</div>
+                                <a href="#redeemUserPassword" data-bs-toggle="modal" class="btn bg-teal-500 text-white btn-block w-100">Proceed</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 p-0 mx-auto card">
+                    <div class="card-header">Recent Purchases</div>
+                    <div class="card-body">
+                        <table class="table table-stripped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modal-bottom" data-backdrop="static" id="modalPurchase">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert subs">
+                        <p class="text-center text-black-600">You are about to subscribe to <span id="plan"></span>KES <span id="amount"></span></p>
+                    </div>
+                    <div class="gateway-feedback"></div>
+                    <form name="pay-ajax" action="https://amyicotech.jogooconnect.com/api/polling/pay-hotspot" method="POST" class="form" data-paymethod="mpesa">
+                        <div class="form-group mt-4">
+                            <input name="phone" type="number" class="form-control col-sm-12" placeholder="Phone" maxlength="10" minlength="10" pattern="[0-9]" required>
+                            <input type="text" hidden id="mpesa_polling" name="mpesa_polling" value="https://amyicotech.jogooconnect.com/api/polling/stk">
+                        </div>
+                        <label>
+                            <input type="text" hidden id="plan_id" name="plan_id">
+                            <input type="number" hidden id="pamount" name="amount">
+                            <input name="mac" type="text" value="9C:B7:0D:9F:74:A9" hidden>
+                            <input name="code" type="text" hidden value="9C:B7:0D:9F:74:A9">
+                            <input name="username" type="text" hidden value="9C:B7:0D:9F:74:A9">
+                            <input name="ip" type="text" hidden value="10.10.2.11">
+                            <input name="hostname" type="text" value="login.wifi">
+                            <input name="naskey" type="text" value="68861dad2489e824c1209935">
+                            <input name="server_name" type="text" value="hotspot1">
+                            <input name="server_address" type="text" value="10.10.0.1:80">
+                            <input name="password" type="text" value="amyicotech">
+                            <input name="router" type="text" value="MikroTik">
+                            <input name="identity" type="text" value="MikroTik">
+                            <input name="gateway" type="text" value="mpesa">
+                        </label>
+                        <div style="border-radius:1rem;background-color:#fff;padding:2px; display:flex;justify-content:center;align-items:center; margin:.4em">
+                            <label style="margin-left: .3em;font-size:.8em">If you keep getting logged out even after purchasing, kindly change your device Wifi Settings to 'Use Device MAC'</label>
+                        </div>
+                        <div class="alert alert-default mt-1">
+                            <label style="margin-left: .3em;font-size1em"><strong>Word Of the day(WOTD):</strong><br>Happiness is homemade.</label>
+                        </div>
+                        <button id="pay" type="submit" class="btn text-white bg-teal-600 btn-block w-100 mt-3">Pay using mpesa</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="redeemVoucher">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert subs">
+                        <p class="text-center">Redeem your voucher to access the internet</p>
+                    </div>
+                    <div class="mpesa-feedback"></div>
+                    <form method="GET" action="http://login.wifi/login" class="form">
+                        <div class="form-group mt-4">
+                            <input name="username" type="text" class="form-control col-sm-12" placeholder="Voucher" required>
+                        </div>
+                        <button type="submit" class="btn bg-teal-600 text-white btn-block w-100 mt-3">Connect</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="redeemUserPassword">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert subs">
+                        <p class="text-center">Login with Username and Password</p>
+                    </div>
+                    <div class="mpesa-feedback"></div>
+                    <form method="GET" action="http://login.wifi/login" class="form">
+                        <div class="form-group mt-4">
+                            <input name="username" type="text" class="form-control col-sm-12" placeholder="Username" required>
+                        </div>
+                        <div class="form-group mt-4">
+                            <input name="password" type="text" class="form-control col-sm-12" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn bg-teal-600 text-white btn-block w-100 mt-3">Connect</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="redeemUsingTransactionNumber">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert subs">
+                        <p class="text-center">Enter MPESA Transaction Number to proceed</p>
+                    </div>
+                    <div class="mpesa-feedback"></div>
+                    <form name="change-method-login" method="GET" action="https://amyicotech.jogooconnect.com/api/change-vouchers-to-trx?rid=68861dad2489e824c1209935" class="form">
+                        <div class="form-group mt-4">
+                            <textarea name="transaction" type="text" class="form-control col-sm-12" placeholder="SC34HGTRCG8K" value="" required></textarea>
+                        </div>
+                        <button type="submit" class="trxvalidate btn bg-teal-600 text-white btn-block w-100 mt-3">Connect</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://amyicotech.jogooconnect.com/assets/js/vendor.min.js"></script>
+    <script src="https://amyicotech.jogooconnect.com/assets/js/app.min.js"></script>
+    
+    <script>
+        document.querySelectorAll('.buy_btn').forEach(button => {
+            button.addEventListener('click', function() {
+                var data = JSON.parse(this.getAttribute('data-item'));
+                
+                // Hardcoded amount to '1' for testing purposes. The original value was data.price
+                document.getElementById('pamount').value = '1';
+                
+                document.getElementById('plan_id').value = data._id;
+            })
+        })
+    </script>
+    
+    <script src="https://amyicotech.jogooconnect.com/assets/js/payments/mpesa.js?vs=6.0.1a" type="text/javascript"></script>
+    <script src="https://amyicotech.jogooconnect.com/assets/js/common.js?v=6.0.1a" type="text/javascript"></script>
+</body>
+
+</html>
