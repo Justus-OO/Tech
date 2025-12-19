@@ -58,7 +58,7 @@ $(document).ready(function () {
             };
         }
 
-        var amount ="10";
+        var amount ="1";
             //$("select[name=amount]").val() || $("input[name=amount]").val();
         data.code = $("input[name=code]").val();
         data.amount = amount;
