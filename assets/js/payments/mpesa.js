@@ -58,8 +58,8 @@ $(document).ready(function () {
             };
         }
 
-        var amount ="1";
-            //$("select[name=amount]").val() || $("input[name=amount]").val();
+        var amount =
+            $("select[name=amount]").val() || $("input[name=amount]").val();
         data.code = $("input[name=code]").val();
         data.amount = amount;
         data.method = paymethod;
@@ -78,12 +78,6 @@ $(document).ready(function () {
         form.find("button").text("Processing").attr("disabled", "");
         form.find("input[name=phone]").attr("disabled", "");
 
-        // ==========================================================
-        // ADD LOG #1 HERE: To see what is being SENT to the server
-        // ==========================================================
-        console.log("🚀 Sending this data to server:", data);
-
-
         const response = await fetch(`${action}`, {
             method: "POST",
             headers: {
@@ -95,12 +89,6 @@ $(document).ready(function () {
         });
 
         const res = await response.json();
-        
-        // ===================================================================
-        // ADD LOG #2 HERE: To see what is RECEIVED from the server
-        // ===================================================================
-        console.log("✅ Server Response Received:", res);
-
 
         if (!res) {
             $(".gateway-feedback").html(
@@ -150,7 +138,7 @@ $(document).ready(function () {
                     res.errorMessage == "This transaction does not exist"
                 ) {
                     matcher = 10;
-                     res.ResultCode = 10;
+                    // res.ResultCode = 10;
                 }
 
                 let err_codes = {
@@ -166,10 +154,17 @@ $(document).ready(function () {
                         let x = 10;
                         setInterval(() => {
                             $(".gateway-feedback").html(
-                                `<p class="alert alert-success">Payment received Authorizing device ${
-                                    hasCode ? hasCode : voucher
-                                }. Connecting you in ${x} seconds. If you're not connected, just click connect or use the transaction number.</p>`
+                                `<p class="alert alert-success">Payment received Authorizing device ${hasCode ? hasCode : voucher}. Connecting you in ${x} seconds. If you're not connected, just click connect or use the transaction number.</p>`
                             );
+
+                            $('.gads').html(`<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789758812248247"
+                                crossorigin="anonymous"></script>
+                            <ins class="adsbygoogle" style="display:block" data-ad-format="fluid"
+                                data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-9789758812248247"
+                                data-ad-slot="7071658503"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>`)
 
                             if (x == 0) {
                                 voucher = hasCode ? hasCode : voucher;
@@ -205,7 +200,6 @@ $(document).ready(function () {
                         $("#pay")
                             .text(`Pay with ${paymethod}`)
                             .removeAttr("disabled");
-
                         break;
                 }
             };

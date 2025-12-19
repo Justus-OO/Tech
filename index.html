@@ -147,12 +147,12 @@
         <div class="card prc-1" style="border: 2px solid #ffc107;"> <div class="list-group list-group-flush">
                 <div class="list-group-item d-flex align-items-center">
                     <div class="flex-fill">
-                        <div class="text-gray-700">Chill
-                        <br><small class="text-muted">3 Device</small></div>
+                        <div class="text-gray-700">My Plan (5 Yrs)<br><small class="text-muted">3 Device</small></div>
                         <div class="fw-bold text-gray-700">KES 1</div>
                     </div>
                     <div>
-                        <a data-item='{"_id":"6887a02f61bf4b50bf5aec42","name":"1 month(3users)","rate-limit":"8M\/8M","shared-users":"3","session-timeout":259200000,"mac-cookie-timeout":"200d 00:00:00","idle-timeout":"00:00:10","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"1","updated_at":"2025-07-28T22:48:32.000000Z","price_numeric":1}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a></div>
+                        <a data-item='{"_id":"6887a02f61bf4b50bf5aec42","name":"Test Plan (30 Mins)","rate-limit":"8M\/8M","shared-users":"3","session-timeout":157788000,"mac-cookie-timeout":"2d 00:00:00","idle-timeout":"00:00:10","keepalive-timeout":"00:01:00","usage_type":"unlimited","type":"hotspot","display":"on","status":"on","router":"all","price":"1","updated_at":"2025-07-28T22:48:32.000000Z","price_numeric":1}' data-bs-target="#modalPurchase" href="#modalPurchase" data-bs-toggle="modal" class="btn-sm btn bg-teal-500 text-white w-100px buy_btn">Buy</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -161,7 +161,7 @@
                     <div class="tab-content py-2" id="nav-tabContent">
                         <div class="tab-pane fade show" id="nav-data" role="tabpanel" aria-labelledby="nav-data-tab" tabindex="0"></div>
                         <div class="tab-pane fade show active" id="nav-hourly" role="tabpanel" aria-labelledby="nav-hourly-tab" tabindex="0">
-                            <div class="row" data-plan_id="6885eae855ce5502d33c30b2" data-amount="10">
+                            <div class="row" data-plan_id="6885e9aa6908a62b243032c2" data-amount="10">
                                 <div class="mb-2 mx-auto">
                                     <div class="card prc-10">
                                         <div class="list-group list-group-flush">
@@ -327,7 +327,7 @@
                         <div class="list-group list-group-flush">
                             <div class="list-group-item">
                                 <div class="text-black-600 fw-bold mb-2">Already Purchased?</div>
-                                <a href="http://login.wifi/login?username=10:29:AB:4A:AT:B5" class="btn bg-teal-500 text-white btn-block w-100">Connect</a>
+                                <a href="http://login.wifi/login?username=9C:B7:0D:9F:74:A8" class="btn bg-teal-500 text-white btn-block w-100">Connect</a>
                             </div>
                         </div>
                     </div>
@@ -398,16 +398,16 @@
                             <input type="text" hidden id="mpesa_polling" name="mpesa_polling" value="https://amyicotech.jogooconnect.com/api/polling/stk">
                         </div>
                         <label>
-                            <input type="text" hidden="" id="plan_id" name="plan_id">
-                           <input type="number" hidden="" id="pamount" name="amount">
-                            <input name="mac" type="text" value="9C:B7:0D:9F:74:A8" hidden="">
+                            <input type="text" hidden id="plan_id" name="plan_id">
+                            <input type="number" hidden id="pamount" name="amount">
+                            <input name="mac" type="text" value="9C:B7:0D:9F:74:A9" hidden>
                             <input name="code" type="text" hidden value="9C:B7:0D:9F:74:A9">
                             <input name="username" type="text" hidden value="9C:B7:0D:9F:74:A9">
-                            <input name="ip" type="text" hidden="" value="10.10.68.117">
+                            <input name="ip" type="text" hidden value="10.10.2.11">
                             <input name="hostname" type="text" value="login.wifi">
-                            <input name="naskey" type="text" value="691568aba746f31727571cbb" hidden="">
+                            <input name="naskey" type="text" value="68861dad2489e824c1209935">
                             <input name="server_name" type="text" value="hotspot1">
-                            <input name="server_address" type="text" value="10.10.0.1:80" hidden="">
+                            <input name="server_address" type="text" value="10.10.0.1:80">
                             <input name="password" type="text" value="amyicotech">
                             <input name="router" type="text" value="MikroTik">
                             <input name="identity" type="text" value="MikroTik">
@@ -472,7 +472,7 @@
                         <p class="text-center">Enter MPESA Transaction Number to proceed</p>
                     </div>
                     <div class="mpesa-feedback"></div>
-                    <form name="change-method-login" method="GET" action="https://amyicotech.jogooconnect.com/api/change-vouchers-to-trx?rid=6887a02f61bf4b50bf5aec42" class="form">
+                    <form name="change-method-login" method="GET" action="https://amyicotech.jogooconnect.com/api/change-vouchers-to-trx?rid=68861dad2489e824c1209935" class="form">
                         <div class="form-group mt-4">
                             <textarea name="transaction" type="text" class="form-control col-sm-12" placeholder="SC34HGTRCG8K" value="" required></textarea>
                         </div>
@@ -498,8 +498,8 @@
         })
     </script>
     
-    <script src="assets/js/payments/mpesa.js" type="text/javascript"></script>
-    <script src="assets/js/common.js" type="text/javascript"></script>
+    <script src="https://amyicotech.jogooconnect.com/assets/js/payments/mpesa.js?vs=6.0.1a" type="text/javascript"></script>
+    <script src="https://amyicotech.jogooconnect.com/assets/js/common.js?v=6.0.1a" type="text/javascript"></script>
 </body>
 
 </html>
